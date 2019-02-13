@@ -1,0 +1,50 @@
+{
+    "name": "vscode-memory",
+    "displayName": "vscode-memory",
+    "description": "Shows how much memory vscode is currently consuming",
+    "version": "1.0.0",
+    "publisher": "seripap",
+    "repository": "https://github.com/seripap/vscode-memory",
+    "engines": {
+        "vscode": "^1.31.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "vscode-memory configuration",
+            "properties": {
+                "vscodemem.frequency": {
+                    "type": "number",
+                    "default": 2000,
+                    "minimum": 200,
+                    "description": "How long in ms to update mem usage."
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^3.3.1",
+        "vscode": "^1.1.28",
+        "tslint": "^5.12.1",
+        "@types/node": "^10.12.21",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "find-process": "^1.2.1",
+        "pidusage": "^2.0.17"
+    }
+}
