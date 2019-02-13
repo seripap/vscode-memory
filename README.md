@@ -2,7 +2,7 @@
 
 Puts current memory usage of VS Code in status bar against total free memory.
 
-\!\[vscode-memory\]\(images/demo.png\)
+![vscode-memory](https://raw.githubusercontent.com/seripap/vscode-memory/master/images/demo.png)
 
 ## Extension Settings
 
