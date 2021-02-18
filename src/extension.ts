@@ -20,8 +20,8 @@ class VSMemory {
 
 	private update(statusBarItem: StatusBarItem) {
 		const config = workspace.getConfiguration('vscodemem');
-		// `Visual` is used because `Code` isnt listed
-		return find('name', 'Visual', true)
+		// `code` is used because `Visual` or `Code` isnt listed
+		return find('name', 'code', true)
 			.then((list: any[]) => {
 				const pids = list.map(item => item && item.pid);
 				pidusage(pids, (err: Error, stats: any[]) => {
