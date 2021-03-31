@@ -20,8 +20,14 @@ class VSMemory {
 
 	private update(statusBarItem: StatusBarItem) {
 		const config = workspace.getConfiguration('vscodemem');
-		// `Visual` is used because `Code` isnt listed
-		return find('name', 'Visual', true)
+		/*
+		 * `searchTerm` has been introduced, so that the extension can work on multiple platforms.
+		 *
+		 * In linux the term to be searched must be "code", in other platforms like OSX the term must be "Visual".
+		 */
+		const searchTerm = process.platform === 'linux' ? 'code' : 'Visual';
+
+		return find('name', searchTerm, true)
 			.then((list: any[]) => {
 				const pids = list.map(item => item && item.pid);
 				pidusage(pids, (err: Error, stats: any[]) => {
