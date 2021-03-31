@@ -2,7 +2,7 @@
     "name": "vscode-memory",
     "displayName": "vscode-memory",
     "description": "Shows how much memory vscode is currently consuming",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "publisher": "seripap",
     "repository": "https://github.com/seripap/vscode-memory",
     "engines": {

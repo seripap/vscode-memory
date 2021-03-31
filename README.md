@@ -10,6 +10,10 @@ Puts current memory usage of VS Code in status bar against total free memory.
 
 ## Release Notes
 
+### 1.1.0
+
+- Support for Linux
+
 ### 1.0.0
 
 Initial release
